@@ -11,7 +11,7 @@ const BlogContent = ({ blogs }) => {
   const blog = blogs.data.find((blog) => blog.id == id) || {};
 
   return (
-    <div className="w-full pb-10 bg-[#f9f9f9] mt-10">
+    <div className="w-full pb-10 bg-white mt-10">
       <div className="max-w-[1240px] mx-auto">
         <div className="grid lg:grid-cols-3 md:grid-cols-3 sm:grid-cols-3 ss:grid-cols-1 gap-x-8 gap-y-8 px-4 sm:pt-20 md:mt-0 ss:pt-20 text-black ">
           {/* Konten Blog */}
@@ -33,7 +33,7 @@ const BlogContent = ({ blogs }) => {
           </div>
 
           {/* Card Penulis */}
-          <div className="lg:col-span-1 md:col-span-1 sm:col-span-1 ss:col-span-1 bg-white rounded-xl p-6 drop-shadow-md py-5 max-h-[400px]">
+          <div className="lg:col-span-1 md:col-span-1 sm:col-span-1 ss:col-span-1 bg-white rounded-xl p-6 drop-shadow-md py-5 max-h-[450px] xs:hidden md:block">
             <div className="text-center">
               <img
                 className="p-2 w-32 h-32 rounded-full mx-auto"
@@ -43,9 +43,18 @@ const BlogContent = ({ blogs }) => {
               <h1 className="font-bold text-2xl text-center text-gray-900 pt-3">
                 {author.author.name}
               </h1>
-              <p className="text-center text-xl text-gray-900">
+              <p className="text-center text-xl text-gray-900 text-justify">
                 {author.author.bio}
-              </p>
+              </p>{" "}
+              <a
+                href="https://example.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <p className="text-center text-blue-500 text-xl mt-4">
+                  lihat portofolio
+                </p>
+              </a>
             </div>
           </div>
         </div>

@@ -42,7 +42,6 @@
   body,
   html {
     overflow-x: hidden; /* Mencegah scroll horizontal */
-    overflow: auto;
   }
   .scroll-to-top {
     position: fixed;

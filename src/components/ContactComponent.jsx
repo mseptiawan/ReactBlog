@@ -43,7 +43,7 @@ const ContactComponent = () => {
   };
 
   return (
-    <div className="w-full py-10 bg-gray-100">
+    <div className="w-full py-10 bg-white">
       <div className="max-w-[1240px] mx-auto px-4">
         <h1 className="text-3xl font-bold text-center text-gray-900 mb-8">
           Kontak Kami
@@ -135,7 +135,7 @@ const ContactComponent = () => {
           </p>
           <p className="text-gray-600 mb-2">Telepon: +6287789035813</p>
           <p className="text-gray-600 mb-2">
-            Alamat: Jalan Komp Yuka, Sukamaju, Palembang, Indonesia
+            Alamat: Jl. Sudarman Ganda Subrata, Sukamaju, Palembang, Indonesia
           </p>
         </div>
       </div>

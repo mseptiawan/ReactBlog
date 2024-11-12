@@ -142,11 +142,9 @@ const Footer = () => {
         <div className="ml-10 ">
           <h6 className="font-bold uppercase py-2">Kontak Kami</h6>
           <ul className="">
-            <li className="py-1">Email: septiawantechnology@gmail.com</li>
-            <li className="py-1">Telepon: +62877-8903-5813</li>
-            <li className="py-1">
-              Alamat: Jalan Komp Yuka, Sukamaju, Palembang, Indonesia{" "}
-            </li>
+            <li className="py-1">Email: septiawan017@gmail.com</li>
+            <li className="py-1">Telepon: +62896-3090-9617</li>
+            <li className="py-1">Alamat: Sukamaju, Palembang, Indonesia </li>
           </ul>
         </div>
       </div>

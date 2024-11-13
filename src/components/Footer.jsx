@@ -8,12 +8,12 @@ import {
   FaTwitter,
   FaYoutube,
   FaLinkedin,
-  FaWhatsapp, // Menambahkan WhatsApp Icon
+  FaWhatsapp, 
 } from "react-icons/fa";
 
 const Footer = () => {
-  emailjs.init("KA1948RXTL38AVhqi"); //
-  const [email, setEmail] = useState(""); // State untuk email input
+  emailjs.init("KA1948RXTL38AVhqi"); 
+  const [email, setEmail] = useState(""); 
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -23,13 +23,12 @@ const Footer = () => {
       return;
     }
 
-    // Kirim email dengan EmailJS
     emailjs
       .sendForm(
-        "service_dfrrrjr", // Ganti dengan Service ID Anda
-        "template_i70os3i", // Ganti dengan Template ID Anda
-        e.target, // Form yang dikirim
-        "KA1948RXTL38AVhqi" // Ganti dengan Public Key Anda
+        "service_dfrrrjr", 
+        "template_i70os3i", 
+        e.target, 
+        "KA1948RXTL38AVhqi" 
       )
       .then(
         (result) => {
@@ -46,7 +45,6 @@ const Footer = () => {
   return (
     <div className="w-full bg-black text-gray-300 py-8 px-2">
       <div className="max-w-[1240px] mx-auto grid grid-cols-2 md:grid-cols-6 border-b-2 border-gray-600 py-8">
-        {/* Form subscribe */}
         <div className="col-span-2 pt-2 md:pt-2">
           <p className="font-bold uppercase font-poppins">
             Ingin Mengetahui Hal-Hal Menarik?
@@ -60,10 +58,10 @@ const Footer = () => {
             <input
               className="w-full p-2 mr-4 rounded-md mb-2 bg-white text-black focus:outline-none font-poppins"
               type="email"
-              name="user_email" // Nama field untuk email
+              name="user_email"
               placeholder="Masukkan email"
               value={email}
-              onChange={(e) => setEmail(e.target.value)} // Mengatur state email
+              onChange={(e) => setEmail(e.target.value)}
             />
             <button type="submit" className="p-2 mb-2 bg-green-500">
               Berlangganan & Temukan Kejutan!
@@ -71,18 +69,24 @@ const Footer = () => {
           </form>
         </div>
 
-        {/* Footer Links */}
         <div className="ml-10">
           <h6 className="font-bold uppercase py-2">Layanan</h6>
           <ul>
-            <li className="py-1">Kelas IT</li>
-            <li className="py-1">Artikel</li>
-            <li className="py-1">Kontak kita</li>
-            <li className="py-1">Portofolio saya</li>
+            <a href="https://septiawantechnology.com">
+              <li className="py-1">Kelas IT</li>
+            </a>
+            <a href="#">
+              <li className="py-1">Artikel</li>
+            </a>
+            <a href="/kontak">
+              <li className="py-1">Kontak kita</li>
+            </a>
+            <a href="https://portfolio.septiawantechnology.com">
+              <li className="">Portofolio saya</li>
+            </a>
           </ul>
         </div>
 
-        {/* Social Media */}
         <div>
           <h6 className="font-bold uppercase py-2">Ikuti Kami</h6>
           <div className="flex flex-wrap gap-7">
@@ -138,18 +142,16 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Contact */}
         <div className="ml-10 ">
           <h6 className="font-bold uppercase py-2">Kontak Kami</h6>
           <ul className="">
-            <li className="py-1">Email: septiawan017@gmail.com</li>
+            <li className="py-1">Email: mseptiawan017@gmail.com</li>
             <li className="py-1">Telepon: +62896-3090-9617</li>
             <li className="py-1">Alamat: Sukamaju, Palembang, Indonesia </li>
           </ul>
         </div>
       </div>
 
-      {/* Footer Bottom */}
       <div className="flex flex-col max-w-[1240px] px-2 py-4 m-auto justify-between sm:flex-row text-center text-gray-500 items-center">
         <p>&copy; 2024 Septiawan Technology. All rights reserved.</p>
       </div>

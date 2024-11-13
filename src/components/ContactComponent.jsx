@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import emailjs from "emailjs-com"; // Mengimpor library emailjs-com
+import emailjs from "emailjs-com"; 
 
 const ContactComponent = () => {
   const [formData, setFormData] = useState({
@@ -12,20 +12,19 @@ const ContactComponent = () => {
     const { name, value } = e.target;
     setFormData((prevData) => ({
       ...prevData,
-      [name]: value, // Mengupdate state berdasarkan name dan value input
+      [name]: value,
     }));
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // Kirim email menggunakan EmailJS
     emailjs
       .sendForm(
-        "service_dfrrrjr", // Ganti dengan Service ID dari EmailJS
-        "template_nwfn9pp", // Ganti dengan Template ID dari EmailJS
-        e.target, // Ambil data dari form yang disubmit
-        "KA1948RXTL38AVhqi" // Ganti dengan Public Key dari EmailJS
+        "service_dfrrrjr", 
+        "template_nwfn9pp",
+        e.target,
+        "KA1948RXTL38AVhqi"
       )
       .then(
         (result) => {
@@ -38,7 +37,6 @@ const ContactComponent = () => {
         }
       );
 
-    // Reset form setelah kirim
     setFormData({ name: "", email: "", message: "" });
   };
 
@@ -59,7 +57,6 @@ const ContactComponent = () => {
           </p>
 
           <form onSubmit={handleSubmit} className="space-y-4">
-            {/* Name */}
             <div className="flex flex-col">
               <label htmlFor="name" className="text-gray-700">
                 Nama
@@ -67,7 +64,7 @@ const ContactComponent = () => {
               <input
                 type="text"
                 id="name"
-                name="name" // Pastikan `name` field ini sesuai dengan key state
+                name="name" 
                 value={formData.name}
                 onChange={handleInputChange}
                 className="p-3 mt-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"
@@ -76,7 +73,6 @@ const ContactComponent = () => {
               />
             </div>
 
-            {/* Email */}
             <div className="flex flex-col">
               <label htmlFor="email" className="text-gray-700">
                 Email
@@ -84,7 +80,7 @@ const ContactComponent = () => {
               <input
                 type="email"
                 id="email"
-                name="email" // Pastikan `name` field ini sesuai dengan key state
+                name="email"
                 value={formData.email}
                 onChange={handleInputChange}
                 className="p-3 mt-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"
@@ -93,14 +89,13 @@ const ContactComponent = () => {
               />
             </div>
 
-            {/* Message */}
             <div className="flex flex-col">
               <label htmlFor="message" className="text-gray-700">
                 Pesan
               </label>
               <textarea
                 id="message"
-                name="message" // Pastikan `name` field ini sesuai dengan key state
+                name="message"
                 value={formData.message}
                 onChange={handleInputChange}
                 className="p-3 mt-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"
@@ -119,7 +114,6 @@ const ContactComponent = () => {
           </form>
         </div>
 
-        {/* Additional contact info */}
         <div className="mt-10 text-center">
           <h1 className="text-2xl font-semibold text-gray-800 mb-4">
             Informasi Kontak

@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Pagination from "@mui/material/Pagination";
@@ -8,7 +7,7 @@ const Blogs = ({ blogs }) => {
   const [currentPage, setCurrentPage] = useState(1);
   const baseUrl = "https://strapi-production-2b16.up.railway.app";
 
-  const postsPerPage = 6; 
+  const postsPerPage = 6;
 
   const indexOfLastPost = currentPage * postsPerPage;
   const indexOfFirstPost = indexOfLastPost - postsPerPage;
@@ -20,9 +19,8 @@ const Blogs = ({ blogs }) => {
     window.scrollTo(0, 0);
   };
 
-  const totalPages = Math.ceil(blogs?.data?.length / postsPerPage);
-
   console.log(currentPosts);
+  const totalPages = Math.ceil(blogs?.data?.length / postsPerPage);
 
   return (
     <div className="w-full bg-white py-[50px] mt-20">
@@ -35,11 +33,11 @@ const Blogs = ({ blogs }) => {
           {currentPosts.length > 0 ? (
             currentPosts.map((blog) => (
               <Link key={blog.id} to={`/blog/${blog.id}`}>
-                <div className="xs:flex sm:block xs:h-[200px] sm:h-[600px] sm:hover:bg-white overflow-hidden sm:hover:shadow-2xl xs:drop-shadow-lg   sm:drop-shadow-lg  xs:bg-white sm:bg-white  ">
+                <div className="xs:flex sm:block xs:h-[200px] sm:h-[600px] sm:hover:bg-white overflow-hidden  shadow-xl  xs:bg-white sm:bg-white  ">
                   {blog.cover_image && blog.cover_image[0] ? (
                     <img
                       className="xs:h-20 sm:h-56 xs:mt-4 xs:ml-5 sm:mt-0 sm:ml-0 sm:w-full xs:w-1/4 object-cover"
-                      src={`https://strapi-production-2b16.up.railway.app${blog.cover_image?.[0]?.url}`} // Memastikan url ada
+                      src={`http://localhost:1337${blog.cover_image[0].url}`} // Memastikan url ada
                       alt={blog.title}
                     />
                   ) : (

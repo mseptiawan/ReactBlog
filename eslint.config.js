@@ -1,38 +1,45 @@
-import js from '@eslint/js'
-import globals from 'globals'
-import react from 'eslint-plugin-react'
-import reactHooks from 'eslint-plugin-react-hooks'
-import reactRefresh from 'eslint-plugin-react-refresh'
+// import globals from "globals";
+// import pluginJs from "@eslint/js";
+// import pluginReact from "eslint-plugin-react";
 
+// /** @type {import('eslint').Linter.Config[]} */
+// export default [
+//   {files: ["**/*.{js,mjs,cjs,jsx}"]},
+//   {languageOptions: { globals: globals.browser }},
+//   pluginJs.configs.recommended,
+//   pluginReact.configs.flat.recommended,
+// ];
+
+import globals from "globals";
+import pluginJs from "@eslint/js";
+import pluginReact from "eslint-plugin-react";
+
+/** @type {import('eslint').Linter.Config[]} */
 export default [
-  { ignores: ['dist'] },
   {
-    files: ['**/*.{js,jsx}'],
+    files: ["**/*.{js,mjs,cjs,jsx,ts,tsx}"], // Tambahkan ts dan tsx jika menggunakan TypeScript
+  },
+  {
     languageOptions: {
-      ecmaVersion: 2020,
-      globals: globals.browser,
-      parserOptions: {
-        ecmaVersion: 'latest',
-        ecmaFeatures: { jsx: true },
-        sourceType: 'module',
-      },
-    },
-    settings: { react: { version: '18.3' } },
-    plugins: {
-      react,
-      'react-hooks': reactHooks,
-      'react-refresh': reactRefresh,
-    },
-    rules: {
-      ...js.configs.recommended.rules,
-      ...react.configs.recommended.rules,
-      ...react.configs['jsx-runtime'].rules,
-      ...reactHooks.configs.recommended.rules,
-      'react/jsx-no-target-blank': 'off',
-      'react-refresh/only-export-components': [
-        'warn',
-        { allowConstantExport: true },
-      ],
+      globals: { ...globals.browser, ...globals.node }, // Menambahkan globals untuk Node.js jika diperlukan
     },
   },
-]
+  pluginJs.configs.recommended, // Aturan standar dari ESLint
+  pluginReact.configs.flat.recommended, // Aturan dasar React
+  {
+    settings: {
+      react: {
+        version: "detect", // Mengatur agar ESLint mendeteksi versi React yang digunakan secara otomatis
+      },
+    },
+  },
+  pluginReact.configs.flat.recommended,
+  {
+    settings: {
+      react: {
+        version: "detect", // Agar ESLint mendeteksi versi React secara otomatis
+      },
+    },
+  },
+  "plugin:prettier/recommended", // Mengintegrasikan Prettier dengan ESLint
+];

@@ -8,12 +8,12 @@ import {
   FaTwitter,
   FaYoutube,
   FaLinkedin,
-  FaWhatsapp, 
+  FaWhatsapp,
 } from "react-icons/fa";
 
 const Footer = () => {
-  emailjs.init("KA1948RXTL38AVhqi"); 
-  const [email, setEmail] = useState(""); 
+  emailjs.init("KA1948RXTL38AVhqi");
+  const [email, setEmail] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -25,10 +25,10 @@ const Footer = () => {
 
     emailjs
       .sendForm(
-        "service_dfrrrjr", 
-        "template_i70os3i", 
-        e.target, 
-        "KA1948RXTL38AVhqi" 
+        "service_dfrrrjr",
+        "template_i70os3i",
+        e.target,
+        "KA1948RXTL38AVhqi"
       )
       .then(
         (result) => {
@@ -63,7 +63,10 @@ const Footer = () => {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
             />
-            <button type="submit" className="p-2 mb-2 bg-green-500">
+            <button
+              type="submit"
+              className="p-2 mb-2 bg-green-500 hover:bg-green-500 hover:text-white hover:scale-95"
+            >
               Berlangganan & Temukan Kejutan!
             </button>
           </form>
@@ -72,17 +75,11 @@ const Footer = () => {
         <div className="ml-10">
           <h6 className="font-bold uppercase py-2">Layanan</h6>
           <ul>
-            <a href="https://septiawantechnology.com">
-              <li className="py-1">Kelas IT</li>
-            </a>
             <a href="#">
               <li className="py-1">Artikel</li>
             </a>
             <a href="/kontak">
               <li className="py-1">Kontak kita</li>
-            </a>
-            <a href="https://portfolio.septiawantechnology.com">
-              <li className="">Portofolio saya</li>
             </a>
           </ul>
         </div>

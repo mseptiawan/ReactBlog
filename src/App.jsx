@@ -1,4 +1,11 @@
-import { Homepage, BlogContentPage, Contact } from "./pages";
+import {
+  Homepage,
+  BlogContentPage,
+  Contact,
+  DaftarPenulisPage,
+  AddAuthorPage,
+  ProfilePage,
+} from "./pages";
 import { Routes, Route } from "react-router-dom";
 import useFetch from "./hooks/useFetch";
 import loadingAnimation from "../data/spin.json";
@@ -6,7 +13,7 @@ import Lottie from "react-lottie";
 
 export default function App() {
   let { loading, data, error } = useFetch(
-    "https://strapi-production-2b16.up.railway.app/api/blogs?populate=*"
+    "http://localhost:1337/api/articles?populate=*"
   );
 
   if (loading) {
@@ -40,6 +47,10 @@ export default function App() {
           element={<BlogContentPage blogs={data || { data: [] }} />}
         ></Route>
         <Route path="/kontak" element={<Contact />} />
+        <Route path="/daftarpenulis" element={<DaftarPenulisPage />}></Route>
+        <Route path="/add-author" element={<AddAuthorPage />}></Route>
+        <Route path="/edit-author/:documentId" element={<AddAuthorPage />} />
+        <Route path="/profile" element={<ProfilePage />} />
       </Routes>
     </div>
   );

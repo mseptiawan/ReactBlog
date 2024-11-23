@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { menu, close, logo } from "../assets";
 import { NavLink } from "react-router-dom";
+import profil from "/profile-simple-svgrepo-com.svg";
 
 const Navbar = () => {
   const [toggle, setToggle] = useState(false);
@@ -23,16 +24,16 @@ const Navbar = () => {
 
         <div className="flex items-center text-white font-poppins">
           <ul className="hidden md:flex">
-            <li className="px-4 py-2">
-              <a
-                href="https://septiawantechnology.com/semua-kursus/"
-                className="text-xl hover:bg-gray-800 px-4 py-2"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Layanan edukasi
-              </a>
-            </li>
+            {/* <li className="px-4 py-2">
+                <a
+                  href="https://septiawantechnology.com/semua-kursus/"
+                  className="text-xl hover:bg-gray-800 px-4 py-2"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Layanan edukasi
+                </a>
+              </li> */}
             <li className="px-4 py-2" onClick={handleLogoClick}>
               <NavLink
                 to="/"
@@ -57,6 +58,30 @@ const Navbar = () => {
                 Kontak kita
               </NavLink>
             </li>
+            <li className="px-4 py-2" onClick={handleLogoClick}>
+              <NavLink
+                to="/daftarpenulis"
+                className={({ isActive }) =>
+                  isActive
+                    ? "hover:bg-white px-4 py-2 bg-white text-black"
+                    : "hover:bg-gray-800 px-4 py-2"
+                }
+              >
+                Penulis
+              </NavLink>
+            </li>
+            <li className="px-4 py-2" onClick={handleLogoClick}>
+              <NavLink
+                to="/profile"
+                className={({ isActive }) =>
+                  isActive
+                    ? "hover:bg-white px-4 py-2 bg-white text-black"
+                    : "hover:bg-gray-800 px-4 py-2"
+                }
+              >
+                Profil
+              </NavLink>
+            </li>
           </ul>
         </div>
 
@@ -72,20 +97,10 @@ const Navbar = () => {
       <ul
         className={
           toggle
-            ? "absolute bg-black text-white w-full px-8 md:hidden font-poppins top-[80px] left-0 transition-all duration-300 h-[150px]"
+            ? "absolute bg-black text-white w-full px-8 md:hidden font-poppins top-[80px] left-0 transition-all duration-300 h-[180px]"
             : "hidden"
         }
       >
-        <li className="px-4 py-2">
-          <a
-            href="https://septiawantechnology.com/semua-kursus/"
-            className="text-xl hover:bg-gray-800 px-4 py-2"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Layanan edukasi
-          </a>
-        </li>
         <li className="px-4 py-2" onClick={handleLogoClick}>
           <NavLink
             to="/"
@@ -108,6 +123,30 @@ const Navbar = () => {
             }
           >
             Kontak kita
+          </NavLink>
+        </li>
+        <li className="px-4 py-2" onClick={handleLogoClick}>
+          <NavLink
+            to="/daftarpenulis "
+            className={({ isActive }) =>
+              isActive
+                ? "hover:bg-white px-4 py-2 bg-white text-black"
+                : "hover:bg-gray-800 px-4 py-2"
+            }
+          >
+            Penulis
+          </NavLink>
+        </li>
+        <li className="px-4 py-2" onClick={handleLogoClick}>
+          <NavLink
+            to="/profile "
+            className={({ isActive }) =>
+              isActive
+                ? "hover:bg-white px-4 py-2 bg-white text-black"
+                : "hover:bg-gray-800 px-4 py-2"
+            }
+          >
+            Profil
           </NavLink>
         </li>
       </ul>

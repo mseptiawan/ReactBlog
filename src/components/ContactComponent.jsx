@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import emailjs from "emailjs-com"; 
+import emailjs from "emailjs-com";
 
 const ContactComponent = () => {
   const [formData, setFormData] = useState({
@@ -21,7 +21,7 @@ const ContactComponent = () => {
 
     emailjs
       .sendForm(
-        "service_dfrrrjr", 
+        "service_dfrrrjr",
         "template_nwfn9pp",
         e.target,
         "KA1948RXTL38AVhqi"
@@ -64,7 +64,7 @@ const ContactComponent = () => {
               <input
                 type="text"
                 id="name"
-                name="name" 
+                name="name"
                 value={formData.name}
                 onChange={handleInputChange}
                 className="p-3 mt-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"
@@ -107,7 +107,7 @@ const ContactComponent = () => {
 
             <button
               type="submit"
-              className="bg-green-500 text-white font-bold px-6 py-3 rounded-md w-full mt-4 hover:bg-green-600 transition duration-300"
+              className="bg-green-500 hover:text-white text-white font-bold px-6 py-3 rounded-md w-full mt-4  hover:bg-green-400 "
             >
               Kirim Pesan
             </button>
